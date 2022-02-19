@@ -1,0 +1,14 @@
+{
+    "name": "ammahmoodtork/accounting",
+    "description": "Accounting Package for Your peoject",
+    "authors": [
+        {
+            "name": "Amir Mahmoodtork",
+            "email": "ammahmoodtork@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "darkaonline/l5-swagger": "^8.1"
+    }
+}
