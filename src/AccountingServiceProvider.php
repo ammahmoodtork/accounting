@@ -28,6 +28,12 @@ class AccountingServiceProvider extends ServiceProvider
         $this->app->bind('detailed' , function($app){
             return new Detailed();
         });
+        $this->app->bind('topic' , function($app){
+            return new Topic();
+        });
+        $this->app->bind('document' , function($app){
+            return new Document();
+        });
         //$this->app->make('ammahmoodtork\accounting\AccountingServiceProvider');
 
     }

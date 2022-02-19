@@ -4,9 +4,11 @@ namespace ammahmoodtork\accounting\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Topics extends Model
 {
+    use SoftDeletes;
     use HasFactory;
     protected $table = 'account_topic';
     protected $fillable = ['name', 'code', 'min_debtor', 'min_creditor', 'max_debtor', 'max_creditor', 'year_id', 'topic_group_id', 'topic_source_id', 'parent_id'];

@@ -2,7 +2,7 @@
 
 namespace ammahmoodtork\accounting;
 
-use ammahmoodtork\accounting\Trait\DetailedTrait;
+use ammahmoodtork\accounting\Traits\DetailedTrait;
 
 class Detailed {
     use DetailedTrait;

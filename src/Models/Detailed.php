@@ -4,26 +4,16 @@ namespace ammahmoodtork\accounting\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Detailed extends Model
 {
+    use SoftDeletes;
     protected $table = 'account_detailed';
     use HasFactory;
     protected $fillable = ['name', 'code', 'source_id', 'parent_id'];
 
-
-    // public static function boot()
-    // {
-    //     self::boot();
-    //     self::created(function ($model) {
-    //         $year = Year::orderBy('id', 'DESC')->first();
-    //         dd($year);
-    //         DetailedYear::created([
-    //             'year_id' => $year->id,
-    //             'detailed_id' => $model->id
-    //         ]);
-    //     });
-    // }
+    protected $with = ['detailed_source' , 'detailed_parent' , 'detailed_type' , 'detailed_year'];
 
     public static function boot()
     {
