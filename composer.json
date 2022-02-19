@@ -1,6 +1,7 @@
 {
     "name": "ammahmoodtork/accounting",
     "description": "Accounting Package for Your peoject",
+    "license":"MIT",
     "authors": [
         {
             "name": "Amir Mahmoodtork",
