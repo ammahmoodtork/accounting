@@ -10,6 +10,18 @@ use Exception;
 
 trait TopicTrit
 {
+
+    /**
+     * Select List Of Topic
+     *
+     * @param integer $id Topic id for select one record
+     * @param integer $page page number, send null if you want to select all
+     * @param string $name select Topic with its name filter
+     * @param string $code select Topic with its code filter
+     * @param integer $parent_id select Topic with its parent_id filter
+     * @author Amir Mahmoodtork <ammahmoodtork@gmail.com>
+     * @return Topic
+     */ 
     public function select($id = null, $page = null, $name = null, $code = null, $parent_id = null)
     {
         if (empty($id)) {
@@ -27,6 +39,22 @@ trait TopicTrit
     }
 
 
+    /**
+     * Insert a Topic
+     *
+     * @param string $name Topic name
+     * @param string $code Topic code (send null to generate it automaticly)
+     * @param integer $parent_id Topic parent_id (sned null if it's a root topic)
+     * @param double $min_debtor Topic min_debtor (send null if it's 0, default value is 0)
+     * @param integer $min_creditor Topic min_creditor (send null if it's 0, default value is 0)
+     * @param integer $max_debtor Topic max_debtor (send null if it's 0, default value is 0)
+     * @param integer $max_creditor Topic max_creditor (send null if it's 0, default value is 0)
+     * @param integer $topic_group_id Topic topic_group_id witch selected from topic_group (send null if it's 1, default value is 1)
+     * @param integer $topic_source_id Topic topic_source_id witch selected from topic_source (send null if it's 1, default value is 1)
+     * @param integer $year_id Topic year_id witch selected from year (default value is the last id of Year table)
+     * @author Amir Mahmoodtork <ammahmoodtork@gmail.com>
+     * @return Topic
+     */ 
     public function add(
         $name,
         $code = null,
@@ -58,6 +86,22 @@ trait TopicTrit
         return Topics::create($data);
     }
 
+
+    /**
+     * Insert a Topic
+     *
+     * @param string $name Topic name
+     * @param string $code Topic code (send null to generate it automaticly)
+     * @param integer $parent_id Topic parent_id (sned null if it's a root topic)
+     * @param double $min_debtor Topic min_debtor (send null if it's 0, default value is 0)
+     * @param integer $min_creditor Topic min_creditor (send null if it's 0, default value is 0)
+     * @param integer $max_debtor Topic max_debtor (send null if it's 0, default value is 0)
+     * @param integer $max_creditor Topic max_creditor (send null if it's 0, default value is 0)
+     * @param integer $topic_group_id Topic topic_group_id witch selected from topic_group (send null if it's 1, default value is 1)
+     * @param integer $topic_source_id Topic topic_source_id witch selected from topic_source (send null if it's 1, default value is 1)
+     * @author Amir Mahmoodtork <ammahmoodtork@gmail.com>
+     * @return Topic
+     */ 
     public function edit(
         $id,
         $name,

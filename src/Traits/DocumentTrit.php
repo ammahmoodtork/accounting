@@ -9,6 +9,15 @@ use Exception;
 
 trait DocumentTrit
 {
+    /**
+     * Select List Of Documents
+     *
+     * @param integer $id Document id for select one record
+     * @param integer $page page number, send null if you want to select all
+     * @param integer $parent_id select document with its parent_id filter
+     * @author Amir Mahmoodtork <ammahmoodtork@gmail.com>
+     * @return Document
+     */ 
     public function select($id = null, $page = null, $parent_id = null)
     {
         if (empty($id)) {
@@ -23,6 +32,21 @@ trait DocumentTrit
         return Document::where('id', $id)->first();
     }
 
+
+
+    /**
+     * Insert a Documents
+     *
+     * @param string $des Document description
+     * @param array $document_details array of document details contains ['des' => "Description of document details",'topic_id' => "topic Id","detailed_id" => "detailed Id","debtor" => "Debtor",'creaditor' => "Creditor"]
+     * @param integer $order Order of document in list
+     * @param integer $doc_id_rel Document witch is related to this document
+     * @param integer $type_id Type of Document (default value is 1)
+     * @param integer $state_id State of document (default value is 1)
+     * @param integer $year_id Year of document (default value is the last id of Year table)
+     * @author Amir Mahmoodtork <ammahmoodtork@gmail.com>
+     * @return Document
+     */ 
     public function add(
         $des,
         $document_details = [],
