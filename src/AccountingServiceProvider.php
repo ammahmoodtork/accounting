@@ -21,7 +21,8 @@ class AccountingServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('ammahmoodtork\accounting\AccountingServiceProvider');
+        $this->app->register(AccountingServiceProvider::class);
+        //$this->app->bind('ammahmoodtork\accounting\AccountingServiceProvider');
         $this->app->bind('accounting' , function($app){
             return new Accounting();
         });
@@ -34,7 +35,6 @@ class AccountingServiceProvider extends ServiceProvider
         $this->app->bind('document' , function($app){
             return new Document();
         });
-        //$this->app->make('ammahmoodtork\accounting\AccountingServiceProvider');
 
     }
 

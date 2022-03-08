@@ -9,9 +9,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "darkaonline/l5-swagger": "^8.1"
-    },
+    "require": {},
     "autoload-dev": {
         "psr-4": {
             "Ammahmoodtork\\Accounting\\": "src/",
