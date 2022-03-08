@@ -10,6 +10,11 @@
     ],
     "minimum-stability": "dev",
     "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ammahmoodtork\\Accounting\\": "src/"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Ammahmoodtork\\Accounting\\": "src/",
